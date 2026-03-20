@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public Groundcheck groundcheck;
 
+
     public float speed;
     public float jumpHeight;
 
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public void Control1()
     {
+        
         if (Input.GetKey(KeyCode.A))
         {
             Move(-speed);
@@ -47,11 +49,15 @@ public class PlayerController : MonoBehaviour
             Move(0);
         }
         
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             Jump(jumpHeight);
         }
+        
+
     }
+
+        
 
     public void Control2()
     {
@@ -66,7 +72,7 @@ public class PlayerController : MonoBehaviour
             Move(0);
         }
         
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             Jump(jumpHeight);
         }
@@ -90,7 +96,9 @@ public class PlayerController : MonoBehaviour
         if (groundcheck.grounded)
         {
             rb.velocityY = jumpHeight;
+
+            
         }
     }
-
+    
 }

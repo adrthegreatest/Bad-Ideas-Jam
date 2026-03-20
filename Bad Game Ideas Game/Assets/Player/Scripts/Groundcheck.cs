@@ -23,6 +23,9 @@ public class Groundcheck : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
+
+        if (col.tag == "Ground" || col.tag == "Player"){
         groundedTimer = 0;
+        }
     }
 }
