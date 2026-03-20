@@ -6,19 +6,23 @@ using UnityEngine;
 public class Groundcheck : MonoBehaviour
 {
     public bool grounded;
+    int groundedTimer;
 
-    private void OnTriggerEnter2D(Collider2D col) {
-        if (col.gameObject.tag == "Ground")
+    void Update()
+    {
+        if (groundedTimer >= 2)
+        {
+            grounded = false;
+        } else
         {
             grounded = true;
         }
+        
+        groundedTimer += 1;
     }
 
-    private void OnTriggerExit2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Ground")
-        {
-            grounded = false;
-        }
+        groundedTimer = 0;
     }
 }

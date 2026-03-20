@@ -3,6 +3,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    /*
+
+    hello would it be OK if you used the other playercontroller script? it already works and is simpler, you can edit it if you want
+    it can also flip the player
+    happy gamedeving :)
+
+    */
+
     private float horizontal;
     private float speed = 3.5f;
     public float jumpingPower = 10f;

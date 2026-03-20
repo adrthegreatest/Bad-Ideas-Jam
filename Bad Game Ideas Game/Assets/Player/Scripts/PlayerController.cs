@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer sprite;
 
     [SerializeField] public bool player1;
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        sprite = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -73,6 +75,14 @@ public class PlayerController : MonoBehaviour
     public void Move(float speed)
     {
         rb.velocityX = Mathf.Lerp(rb.velocityX, speed, Time.deltaTime*15);
+
+        if (speed > 0)
+        {
+            sprite.flipX = false;
+        } else
+        {
+            sprite.flipX = true;
+        }
     }
 
     public void Jump(float jumpHeight)
