@@ -4,10 +4,10 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Timerdown : MonoBehaviour
+public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingtime;
+    public float remainingtime;
     // Update is called once per frame
     void Update ()
     {
