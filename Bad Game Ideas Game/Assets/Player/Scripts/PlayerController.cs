@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sprite;
 
     [SerializeField] public bool player1;
+    [SerializeField] private Animator _animator;
+    
 
     public Groundcheck groundcheck;
 
@@ -55,6 +58,14 @@ public class PlayerController : MonoBehaviour
             Jump(jumpHeight);
         }
         
+        if (Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.D))
+        {
+            _animator.SetBool("isrunning", true);
+        }
+        else
+        {
+            _animator.SetBool("isrunning", false);
+        }
 
     }
 
